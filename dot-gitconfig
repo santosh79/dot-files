@@ -1,0 +1,19 @@
+[user]
+  name = Santosh Kumar
+  email = santosh79@gmail.com
+[color]
+  diff = auto
+  status = auto
+  pager = true
+  interactive = auto
+  branch = auto
+[alias]
+  up = !ruby ~/code/gx/git-update.rb
+  pub = !ruby ~/code/gx/git-publish.rb
+  st = status
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[core]
+  excludesfile = /Users/skumar/.gitignore
+  whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+  excludesfiles = ~/.gitignore
