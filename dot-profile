@@ -1,0 +1,35 @@
+alias redis-start='redis-server /usr/local/etc/redis.conf'
+alias gst="git status"
+alias lp="ls -p"
+alias lrt="ls -lrt"
+alias ll="ls -l"
+alias lla="ls -la"
+alias sc="bundle exec rails c"
+alias ss="bundle exec rails s"
+export PATH="/usr/local/bin:$PATH"
+source ~/.git-completion.bash
+
+export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
+export CLICOLOR=1
+export LS_COLORS exfxcxdxbxegebabagacad
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+export TERM=xterm-256color
+# Add the following to your ~/.bashrc or ~/.zshrc
+hitch() {
+  command hitch "$@"
+  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+}
+alias unhitch='hitch -u'
+# Uncomment to persist pair info between terminal instances
+# hitch
+
+
+##
+# Your previous /Users/skumar/.profile file was backed up as /Users/skumar/.profile.macports-saved_2010-12-08_at_16:36:11
+##
+
+# MacPorts Installer addition on 2010-12-08_at_17:54:17: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+export PATH=$HOME/local/bin:$PATH

@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/skumar/dev/cypress'
+let g:netrw_dirhist_2='/Users/skumar/dev/cypress/autotest'
+let g:netrw_dirhist_3='/Users/skumar/dev/cypress'
+let g:netrw_dirhist_4='/Users/skumar/dev/cypress/app'
+let g:netrw_dirhist_5='/Users/skumar/dev/cypress/app/models'
+let g:netrw_dirhist_6='/Users/skumar/dev/cypress'
+let g:netrw_dirhist_7='/Users/skumar/dev/cypress/app/views/devise'
+let g:netrw_dirhist_8='/Users/skumar/dev/redwood'
+let g:netrw_dirhist_9='/Users/skumar/dev/cypress'
