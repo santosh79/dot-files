@@ -8,8 +8,6 @@
   interactive = auto
   branch = auto
 [alias]
-  up = !ruby ~/code/gx/git-update.rb
-  pub = !ruby ~/code/gx/git-publish.rb
   st = status
   co = checkout
   br = branch
