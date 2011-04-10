@@ -15,3 +15,13 @@ public/stylesheets/**
 .rake_tasks
 public/images/mailer_logos/**
 !public/images/mailer_logos/canonical
+
+.DS_store
+*~.nib
+build/
+*.pbxuser
+*.perspective
+*.perspective3
+*.mode1v3
+*.mode2v3
+
