@@ -127,7 +127,6 @@ set foldlevel=1
 set foldenable
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>p
 
 command Q q " Bind :Q to :q
 command Qall qall 
