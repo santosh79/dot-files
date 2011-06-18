@@ -6,6 +6,7 @@ alias ll="ls -l"
 alias lla="ls -la"
 alias sc="bundle exec rails c"
 alias ss="bundle exec rails s"
+alias start-redis="/usr/local/bin/redis-server /usr/local/etc/redis.conf"
 export PATH="/usr/local/bin:$PATH"
 source ~/.git-completion.bash
 
