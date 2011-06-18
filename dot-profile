@@ -6,7 +6,8 @@ alias ll="ls -l"
 alias lla="ls -la"
 alias sc="bundle exec rails c"
 alias ss="bundle exec rails s"
-alias start-redis="/usr/local/bin/redis-server /usr/local/etc/redis.conf"
+alias rbx="/usr/local/bin/rbx/bin/rbx"
+alias start-redis="/usr/local/bin/redis-server ~/redis.conf"
 export PATH="/usr/local/bin:$PATH"
 source ~/.git-completion.bash
 
@@ -33,4 +34,4 @@ alias unhitch='hitch -u'
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:/usr/local/sbin:$PATH
