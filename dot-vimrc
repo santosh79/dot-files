@@ -122,13 +122,11 @@ au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
-set foldmethod=syntax
-set foldlevel=1
-set foldenable
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
-command Q q " Bind :Q to :q
+command Q q
+command W w
 command Qall qall 
 colorscheme ir_black
 set background=dark
