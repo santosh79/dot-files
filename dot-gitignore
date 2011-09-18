@@ -4,17 +4,11 @@ log/*.log
 tmp
 tmp/**/*
 .DS_Store
-.idea
 *.iml
 *.swp
 tags/
 .sass-cache/*
 public/stylesheets/**
-!public/stylesheets/ui.selectmenu.css
-!public/stylesheets/jquery-ui-1.8.5.custom.css
-.rake_tasks
-public/images/mailer_logos/**
-!public/images/mailer_logos/canonical
 
 .DS_store
 *~.nib

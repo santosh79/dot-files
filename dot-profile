@@ -26,10 +26,6 @@ alias unhitch='hitch -u'
 # hitch
 
 
-##
-# Your previous /Users/skumar/.profile file was backed up as /Users/skumar/.profile.macports-saved_2010-12-08_at_16:36:11
-##
-
 # MacPorts Installer addition on 2010-12-08_at_17:54:17: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
