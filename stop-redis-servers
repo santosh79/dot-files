@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+num_of_servers = ARGV[0].to_i
+num_of_servers.times do |i|
+  system("redis-cli -p #{6379 + i*1000} SHUTDOWN")
+  system("rm redis_#{i}.conf")
+end

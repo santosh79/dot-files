@@ -6,7 +6,6 @@ alias lla="ls -la"
 alias sc="bundle exec rails c"
 alias ss="bundle exec rails s"
 alias rbx="/usr/local/bin/rbx/bin/rbx"
-alias start-redis="/usr/local/bin/redis-server ~/redis.conf"
 alias start_mongo="mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf"
 export PATH="/usr/local/bin:$PATH"
 source ~/.git-completion.bash
