@@ -92,6 +92,7 @@ noremap j gj
 noremap k gk
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
+inoremap ;; <Esc>
 
 set mouse=in
 
