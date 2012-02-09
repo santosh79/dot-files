@@ -90,6 +90,8 @@ set nobackup
 set noswapfile
 noremap j gj
 noremap k gk
+noremap tn gt
+noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap ;; <Esc>
