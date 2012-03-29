@@ -94,6 +94,7 @@ noremap tn gt
 noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
+inoremap clg console.log
 inoremap ;; <Esc>
 
 set mouse=in
