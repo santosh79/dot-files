@@ -135,8 +135,8 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 command Q q
 command W w
 command Qall qall 
-colorscheme ir_black
-set background=dark
+colorscheme hemisu
+set background=light
 
 " Show trailing whitespace:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
