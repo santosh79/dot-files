@@ -13,8 +13,9 @@
   br = branch
   wd = diff --word-diff
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  me = log --author=Santosh --since='1 week' --format='%Cblue%h %Cgreen%ai %Creset%s'
 [core]
   editor = vim
-  excludesfile = /Users/skumar/.gitignore
+  excludesfile = /Users/santosh/.gitignore
   whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
   excludesfiles = ~/.gitignore
