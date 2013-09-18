@@ -44,7 +44,11 @@ map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>sm :RSmodel 
 map <Leader>su :RSunittest 
 map <Leader>sv :RSview 
-map <Leader>t :!ruby -I"test" -I"spec" %<CR>
+map <Leader>t :tabn<CR>
+map <Leader>p :tabp<CR>
+map <Leader>tt :tabnew<CR>
+map <Leader>c C
+map <Leader>r <C-r>
 map <Leader>u :Runittest 
 map <Leader>vc :RVcontroller 
 map <Leader>vf :RVfunctional 
@@ -52,8 +56,7 @@ map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>vu :RVunittest 
 map <Leader>vm :RVmodel 
 map <Leader>vv :RVview 
-map <Leader>w <C-w>w
-map <Leader>r :execute '!rspec %:' . line('.')<CR>
+map <Leader>w <esc>:w<CR>
 
 map <C-h> :nohl<CR>
 imap <C-l> <Space>=><Space>
