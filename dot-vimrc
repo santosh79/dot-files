@@ -32,7 +32,7 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>f :sp spec/factories.rb<CR>
 map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>h :FuzzyFinderTextMate<CR>
-map <Leader>l :!ruby <C-r>% \| less<CR>
+map <Leader>l <C-w><C-w>
 map <Leader>m :Rmodel 
 map <Leader>n ,w,t
 map <Leader>o ?def <CR>:nohl<CR>w"zy$:!ruby -I"test" <C-r>% -n <C-r>z<CR>
