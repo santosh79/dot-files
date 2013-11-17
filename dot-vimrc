@@ -46,7 +46,6 @@ map <Leader>su :RSunittest
 map <Leader>sv :RSview 
 map <Leader>t :tabn<CR>
 map <Leader>p :tabp<CR>
-map <Leader>tt :tabnew<CR>
 map <Leader>c C
 map <Leader>r <C-r>
 map <Leader>u :Runittest 
