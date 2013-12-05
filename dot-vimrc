@@ -55,7 +55,6 @@ map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>vu :RVunittest 
 map <Leader>vm :RVmodel 
 map <Leader>vv :RVview 
-map <Leader>w <esc>:w<CR>
 map <Leader>wq <esc>:wq<CR>
 
 map <C-h> :nohl<CR>

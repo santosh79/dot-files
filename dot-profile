@@ -1,40 +1,15 @@
 alias gst="git status"
 alias lp="ls -p"
 alias lrt="ls -lrt"
-alias ll="ls -l"
-alias lla="ls -la"
-alias sc="bundle exec rails c"
-alias ss="bundle exec rails s"
-alias rbx="/usr/local/bin/rbx/bin/rbx"
-alias start_mongo="mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf"
+alias la="ls -al"
+alias sc="rails console"
+alias ss="rails server"
+alias lla="ls -lrt | tail -1"
+alias lh='ls -a | grep "^\." | more'
 export PATH="/usr/local/bin:$PATH"
-source ~/.git-completion.bash
+source ./dot-git-completion.bash
 
 export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 export TERM=xterm-256color
-# Add the following to your ~/.bashrc or ~/.zshrc
-hitch() {
-  command hitch "$@"
-  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
-}
-alias unhitch='hitch -u'
-# Uncomment to persist pair info between terminal instances
-# hitch
-
-
-# MacPorts Installer addition on 2010-12-08_at_17:54:17: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-export PATH=$HOME/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/.cljr/bin:$PATH
-export PATH=$PATH:$HOME/depot_tools
-
-export EC2_HOME=$HOME/.ec2
-export PATH=$PATH:$EC2_HOME/bin
-export EC2_PRIVATE_KEY=pk-4ECUD2VLLIVEUETTGOKGAMLUQ7PZXCYG.pem
-export EC2_CERT=cert-4ECUD2VLLIVEUETTGOKGAMLUQ7PZXCYG.pem
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
