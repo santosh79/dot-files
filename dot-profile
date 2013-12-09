@@ -9,6 +9,7 @@ alias lh='ls -a | grep "^\." | more'
 alias vs='vagrant ssh'
 alias vu='vagrant up'
 alias hnpp="git push heroku-node using_node:master"
+alias gp='git push'
 alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
 
