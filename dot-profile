@@ -6,8 +6,11 @@ alias sc="rails console"
 alias ss="rails server"
 alias lla="ls -lrt | tail -1"
 alias lh='ls -a | grep "^\." | more'
+alias vs='vagrant ssh'
+alias vu='vagrant up'
+alias hnpp="git push heroku-node using_node:master"
+alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
-source ./dot-git-completion.bash
 
 export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
