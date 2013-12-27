@@ -12,8 +12,8 @@ alias hnpp="git push heroku-node using_node:master"
 alias gp='git push'
 alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
+alias lr='lein repl'
 
-export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
 export TERM=xterm-256color
