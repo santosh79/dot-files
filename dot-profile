@@ -12,6 +12,7 @@ alias vs='vagrant ssh'
 alias vu='vagrant up'
 alias hnpp="git push heroku-node using_node:master"
 alias gp='git push'
+alias gh='git push heroku master'
 alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
 alias lr='lein repl'
