@@ -1,6 +1,8 @@
 alias gst="git status"
 alias gc="git c"
 alias gca="git ca"
+alias gf="git fetch"
+alias gdc="git diff --cached"
 alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
