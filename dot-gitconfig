@@ -17,12 +17,8 @@
   wd = diff --word-diff
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   me = log --author=Santosh --since='1 week' --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  ; me = log --author=Santosh --since='1 week' --format='%Cblue%h %Cgreen%ai %Creset%s'
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/santosh/.gitignore
   whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
   excludesfiles = ~/.gitignore
-[github]
-	user = santosh79
-	token = f6fdf9425e572d624cef49609a952c25c67c4b6f

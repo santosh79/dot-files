@@ -19,6 +19,7 @@ alias gh='git push heroku master'
 alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
 alias lr='lein repl'
+alias tl='tmux ls'
 
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
@@ -36,3 +37,4 @@ NO_COLOR="\[\033[0m\]"
  
 PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
