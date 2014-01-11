@@ -20,6 +20,9 @@ alias hnppl='heroku logs --app santosh-log-node'
 export PATH="/usr/local/bin:$PATH"
 alias lr='lein repl'
 alias tl='tmux ls'
+alias hgl='hg log --only-branch'
+alias hgall='hg branches'
+alias hgb='hg branch'
 
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
