@@ -1,0 +1,11 @@
+[extensions]
+shelve=
+hgext.fetch=
+transplant=
+parentrevspec=
+mq=
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+[alias]
+show = log -pr
+
