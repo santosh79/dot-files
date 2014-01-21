@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/srinivasakumar/codez/my-blog/test'
-let g:netrw_dirhist_2='/Users/srinivasakumar/codez/my-blog'
-let g:netrw_dirhist_3='/Users/srinivasakumar/vagrant_vm/clojure-koans'
-let g:netrw_dirhist_4='/Users/srinivasakumar/vagrant_vm/clojure-koans/src'
-let g:netrw_dirhist_5='/Users/srinivasakumar/vagrant_vm/clojure-koans/src/koans'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/santosh/codez/code'

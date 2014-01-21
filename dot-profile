@@ -42,3 +42,6 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
+alias ct="cake test"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
