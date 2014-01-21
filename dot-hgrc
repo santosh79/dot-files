@@ -8,4 +8,9 @@ mq=
 cacerts = /etc/hg-dummy-cert.pem
 [alias]
 show = log -pr
-
+up = update
+co = update
+br = branch
+bra = branches
+[ui]
+username = santosh@tenmiles.com
