@@ -74,7 +74,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set autoindent
 set showmatch
-set nowrap
+set wrap
 set autoread
 set wmh=0
 set viminfo+=!

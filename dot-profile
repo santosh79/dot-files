@@ -12,6 +12,8 @@ alias ss="rails server"
 alias lla="ls -lrt | tail -1"
 alias lh='ls -a | grep "^\." | more'
 alias vs='vagrant ssh'
+alias vp='vagrant up --provision'
+alias vh='vagrant halt'
 alias vu='vagrant up'
 alias hnpp="git push heroku-node using_node:master"
 alias gp='git push'
@@ -23,6 +25,7 @@ alias tl='tmux ls'
 alias hgl='hg log --only-branch'
 alias hgall='hg branches'
 alias hgb='hg branch'
+alias mt='make test'
 
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
