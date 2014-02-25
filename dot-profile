@@ -26,6 +26,8 @@ alias hgl='hg log --only-branch'
 alias hgall='hg branches'
 alias hgb='hg branch'
 alias mt='make test'
+alias ss='bundle exec rails server'
+alias rr='bundle exec rake routes'
 
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
