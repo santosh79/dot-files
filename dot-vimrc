@@ -56,6 +56,7 @@ map <Leader>vu :RVunittest
 map <Leader>vm :RVmodel 
 map <Leader>vv :RVview 
 map <Leader>wq <esc>:wq<CR>
+nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
 imap <C-l> <Space>=><Space>
