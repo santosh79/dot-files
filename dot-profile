@@ -27,6 +27,7 @@ alias hgall='hg branches'
 alias hgb='hg branch'
 alias mt='make test'
 alias ss='bundle exec rails server'
+alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
 
 export CLICOLOR=1
