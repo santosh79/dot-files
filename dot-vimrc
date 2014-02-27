@@ -138,7 +138,7 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 command Q q
 command W w
 command Qall qall 
-colorscheme default
+colorscheme delek
 set background=dark
 
 " Show trailing whitespace:
