@@ -30,6 +30,7 @@ alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
 
+# export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
 export LS_COLORS exfxcxdxbxegebabagacad
 export TERM=xterm-256color
@@ -48,6 +49,4 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-alias ct="cake test"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
