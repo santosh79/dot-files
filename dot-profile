@@ -53,3 +53,5 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
+alias inst='sudo apt-get -y install'
+
