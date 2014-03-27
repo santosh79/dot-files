@@ -24,6 +24,7 @@ export PATH="/usr/local/bin:$PATH"
 alias lr='lein repl'
 alias tl='tmux ls'
 alias ta='tmux at -t'
+alias m='mvim '
 alias hgl='hg log --only-branch'
 alias hgall='hg branches'
 alias hgb='hg branch'
