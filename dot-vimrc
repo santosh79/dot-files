@@ -20,7 +20,7 @@ filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-let mapleader = ","
+let mapleader = ";"
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>cc :!cucumber %<CR>
@@ -31,15 +31,16 @@ map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 map <Leader>gd :Gdiff<CR>
+map <Leader>on :on<CR>
 map <Leader>gr :Gread<CR>
 map <Leader>gw :Gwrite<CR>
 map <Leader>f :sp spec/factories.rb<CR>
 map <Leader>fa :sp test/factories.rb<CR>
-map <Leader>h :FuzzyFinderTextMate<CR>
 map <Leader>l <C-w><C-w>
 map <Leader>m :Rmodel 
 map <Leader>n ,w,t
-map <Leader>o ?def <CR>:nohl<CR>w"zy$:!ruby -I"test" <C-r>% -n <C-r>z<CR>
+map <Leader>a 0w
+map <Leader>s $
 map <Leader>p :set paste<CR>i
 map <Leader>rb :Rake!<CR>
 map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
@@ -60,6 +61,7 @@ map <Leader>vu :RVunittest
 map <Leader>vm :RVmodel 
 map <Leader>vv :RVview 
 map <Leader>wq <esc>:wq<CR>
+map <Leader>q <esc>:q<CR>
 nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
@@ -102,7 +104,12 @@ noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log
-inoremap jss JSON.stringify
+inoremap jss JSON.stringify(
+inoremap prd path.resolve(__dirname,
+inoremap prf printf ("
+inoremap scf scanf ("
+inoremap tss toString()
+inoremap hq handleQuery(function(rows) {
 inoremap ;; <Esc>
 
 set mouse=in
@@ -110,7 +117,7 @@ set mouse=in
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>s :w <CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " Set the tag file search order
@@ -245,3 +252,17 @@ function! s:RunShellCommand(cmdline)
 endfunction
 
 noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
