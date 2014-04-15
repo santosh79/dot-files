@@ -56,3 +56,4 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 alias inst='sudo apt-get -y install'
 alias gpom="git push origin master"
 
+alias tn='tmux new -s'
