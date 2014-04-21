@@ -101,11 +101,13 @@ set noswapfile
 noremap j gj
 noremap k gk
 noremap tn gt
+noremap ' @q
 noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log
 inoremap jss JSON.stringify(
+inoremap pre process.exit(0);
 inoremap prd path.resolve(__dirname,
 inoremap prf printf ("
 inoremap scf scanf ("
