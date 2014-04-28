@@ -102,6 +102,7 @@ noremap j gj
 noremap k gk
 noremap tn gt
 noremap ' @q
+noremap 1 $
 noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
