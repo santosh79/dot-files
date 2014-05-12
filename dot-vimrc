@@ -63,6 +63,11 @@ map <Leader>vm :RVmodel
 map <Leader>vv :RVview 
 map <Leader>wq <esc>:wq<CR>
 map <Leader>q <esc>:q<CR>
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>w :w <CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
@@ -107,7 +112,7 @@ noremap \ ?
 noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
-inoremap clg console.log
+inoremap clg console.log(
 inoremap jss JSON.stringify(
 inoremap pre process.exit(0);
 inoremap prd path.resolve(__dirname,
@@ -118,12 +123,6 @@ inoremap hq handleQuery(function(rows) {
 inoremap ;; <Esc>
 
 set mouse=in
-
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :w <CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " Set the tag file search order
 set tags=./tags;
