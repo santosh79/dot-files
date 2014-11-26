@@ -13,6 +13,7 @@ public/stylesheets/**
 .DS_store
 *~.nib
 build/
+.vagrant/
 *.pbxuser
 *.perspective
 *.perspective3
