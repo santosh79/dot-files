@@ -1,3 +1,22 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'tpope/vim-rails'
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-surround'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'guns/vim-clojure-static'
+Bundle 'vim-scripts/paredit.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'jimenezrick/vimerl'
+Bundle 'junegunn/vim-easy-align'
+Bundle 'tpope/vim-fugitive'
 " ================
 " Ruby stuff
 " ================
@@ -17,51 +36,26 @@ augroup END
 " " see
 " http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 
 let mapleader = ";"
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-map <Leader>cc :!cucumber %<CR>
 map <Leader>gp :!git push<CR>
 map <Leader>co :TComment<CR>
-map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
-map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 map <Leader>gd :Gdiff<CR>
 map <Leader>on :on<CR>
 map <Leader>gr :Gread<CR>
-map <Leader>gl :!git lg<CR>
 map <Leader>gw :Gwrite<CR>
-map <Leader>f :sp spec/factories.rb<CR>
-map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>l <C-w><C-w>
-map <Leader>m :Rmodel 
-map <Leader>n ,w,t
 map <Leader>a 0w
-map <Leader>s $
 map <Leader>p :set paste<CR>i
-map <Leader>rb :Rake!<CR>
-map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
-map <Leader>rw :%s/\s\+$//
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sm :RSmodel 
-map <Leader>su :RSunittest 
-map <Leader>sv :RSview 
-map <Leader>t :tabn<CR>
-map <Leader>p :tabp<CR>
-map <Leader>c C
-map <Leader>r <C-r>
-map <Leader>u :Runittest 
-map <Leader>vc :RVcontroller 
-map <Leader>vf :RVfunctional 
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vu :RVunittest 
-map <Leader>vm :RVmodel 
-map <Leader>vv :RVview 
 map <Leader>wq <esc>:wq<CR>
+map <Leader>ce :!erl -compile %<CR>
+map <Leader>di :!dialyzer %<CR>
+map <Leader>mk :mksession! ~/vim_session<CR>
+map <Leader>ms :source ~/vim_session<CR>
 map <Leader>q <esc>:q<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -113,6 +107,7 @@ noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log(
+inoremap iof io:format("
 inoremap jss JSON.stringify(
 inoremap pre process.exit(0);
 inoremap prd path.resolve(__dirname,
@@ -123,12 +118,6 @@ inoremap hq handleQuery(function(rows) {
 inoremap ;; <Esc>
 
 set mouse=in
-
-" Set the tag file search order
-set tags=./tags;
-
-" Use _ as a word-separator
-" set iskeyword-=_
 
 " Make the omnicomplete text readable
 :highlight PmenuSel ctermfg=black
@@ -143,8 +132,6 @@ set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ [#\%03.3b\ 0x\%02.2B]\ \ %l,%v\ \ %P
 " Format xml files
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
 
-set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
-
 " set foldmethod=syntax
 " set foldlevel=1
 " set foldenable
@@ -154,10 +141,7 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 command Q q
 command W w
 command Qall qall 
-colorscheme delek
-set background=dark
 
-" Show trailing whitespace:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
 
@@ -174,102 +158,13 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  augroup END
-
-endif " has("autocmd")
-
-"
-"" Tabline
-"
-if exists("+showtabline")
-  function! MyTabLine()
-    let s = ''
-    let t = tabpagenr()
-    let i = 1
-
-    while i <= tabpagenr('$')
-      let buflist = tabpagebuflist(i)
-      let winnr = tabpagewinnr(i)
-      let s .= '%' . i . 'T'
-      let s .= (i == t ? '%1*' : '%2*')
-      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-      let file = bufname(buflist[winnr - 1])
-      let file = fnamemodify(file, ':p:t')
-      let file = (file == '') ? '[No Name]' : file
-      let s .= ' ' . file . ' '
-      let s .= winnr
-      let s .= (getbufvar(buflist[winnr - 1], '&modified') ? '+ ' : ' ')
-      let i = i + 1
-    endwhile
-    let s .= '%T%#TabLineFill#%='
-    let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
-    return s
-  endfunction
-  set stal=2
-  set tabline=%!MyTabLine()
-endif
 let g:solarized_termcolors=256
 set t_Co=256
 
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-function! s:RunShellCommand(cmdline)
-  echo a:cmdline
-  let expanded_cmdline = a:cmdline
-  for part in split(a:cmdline, ' ')
-     if part[0] =~ '\v[%#<]'
-        let expanded_part = fnameescape(expand(part))
-        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:    ' . a:cmdline)
-  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  setlocal nomodifiable
-  1
-endfunction
 
 noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 set exrc
 set secure
 

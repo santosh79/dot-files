@@ -57,6 +57,12 @@ alias inst='sudo apt-get -y install'
 alias gpom="git push origin master"
 
 alias tn='tmux new -s'
+alias tr='tmux-session restore'
+alias ts='tmux-session save'
 alias gpr='git pull --rebase'
 
 alias cpd="cp -R -n "
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
