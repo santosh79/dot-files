@@ -1,22 +1,38 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'tpope/vim-rails'
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-surround'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'guns/vim-clojure-static'
-Bundle 'vim-scripts/paredit.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jimenezrick/vimerl'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'tpope/vim-fugitive'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'tpope/vim-rails'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-surround'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jimenezrick/vimerl'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'tpope/vim-fugitive'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
 " ================
 " Ruby stuff
 " ================
