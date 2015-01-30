@@ -2,21 +2,23 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'tpope/vim-rails'
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-surround'
-Plugin 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jimenezrick/vimerl'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'tpope/vim-fugitive'
+Plugin 'xolox/vim-session'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'guns/vim-clojure-static'
+" Plugin 'tpope/vim-fireplace'
+" Plugin 'tpope/vim-foreplay'
+" Plugin 'tpope/vim-git'
+" Plugin 'derekwyatt/vim-scala'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-surround'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,6 +71,7 @@ map <Leader>p :set paste<CR>i
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>wq <esc>:wq<CR>
 map <Leader>ce :!erl -compile %<CR>
+map <Leader>ru :!elixir %<CR>
 map <Leader>di :!dialyzer %<CR>
 map <Leader>mk :mksession! ~/vim_session<CR>
 map <Leader>ms :source ~/vim_session<CR>
@@ -124,8 +127,8 @@ noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log(
 inoremap iof io:format("
+inoremap iop IO.puts "
 inoremap jss JSON.stringify(
-inoremap pre process.exit(0);
 inoremap prd path.resolve(__dirname,
 inoremap prf printf ("
 inoremap scf scanf ("
@@ -181,6 +184,7 @@ set t_Co=256
 
 noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
+colorscheme DevC++
 set exrc
 set secure
 
