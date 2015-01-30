@@ -32,6 +32,7 @@ alias mt='make test'
 alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
+alias v='vim '
 
 # export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
@@ -66,3 +67,5 @@ alias cpd="cp -R -n "
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+alias mt='mix test'
+alias im='iex -S mix'
