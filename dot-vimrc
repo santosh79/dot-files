@@ -8,10 +8,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jimenezrick/vimerl'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'xolox/vim-session'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'guns/vim-clojure-static'
+" Plugin 'Valloric/YouCompleteMe'
 " Plugin 'tpope/vim-fireplace'
 " Plugin 'tpope/vim-foreplay'
 " Plugin 'tpope/vim-git'
@@ -73,8 +73,6 @@ map <Leader>wq <esc>:wq<CR>
 map <Leader>ce :!erl -compile %<CR>
 map <Leader>ru :!elixir %<CR>
 map <Leader>di :!dialyzer %<CR>
-map <Leader>mk :mksession! ~/vim_session<CR>
-map <Leader>ms :source ~/vim_session<CR>
 map <Leader>q <esc>:q<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -112,7 +110,7 @@ set smarttab
 set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
-set number 
+set number
 set autoindent " always set autoindenting on
 set nobackup
 set noswapfile
@@ -159,7 +157,7 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
 command Q q
 command W w
-command Qall qall 
+command Qall qall
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
@@ -184,7 +182,6 @@ set t_Co=256
 
 noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
-colorscheme DevC++
 set exrc
 set secure
 
