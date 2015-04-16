@@ -186,6 +186,8 @@ noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
 set exrc
 set secure
+colorscheme Tomorrow
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 colorscheme Tomorrow
 
