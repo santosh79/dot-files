@@ -67,5 +67,7 @@ alias cpd="cp -R -n "
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin/terraform:/usr/local/bin:$PATH"
+
 alias mt='mix test'
 alias im='iex -S mix'
