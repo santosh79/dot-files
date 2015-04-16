@@ -79,6 +79,8 @@ map <Leader>q <esc>:q<CR>
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>w :w <CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>t :tabnew <C-R>=expand("%:p:h") . '/'<CR>
+
 nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
@@ -132,7 +134,7 @@ inoremap prf printf ("
 inoremap scf scanf ("
 inoremap tss toString()
 inoremap hq handleQuery(function(rows) {
-inoremap ;; <Esc>
+inoremap date<Tab> <C-R>=strftime("%y-%m-%d")<CR>
 
 set mouse=in
 
@@ -184,4 +186,7 @@ noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
 set exrc
 set secure
+
+colorscheme Tomorrow
+
 
