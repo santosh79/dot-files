@@ -82,7 +82,9 @@ map <Leader>v V
 map <Leader>vn :vnew <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>t :tabnew <C-R>=expand("%:p:h") . '/'<CR>
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>o O
+nnoremap <Leader>c C
 
 nnoremap Q <nop>
 
