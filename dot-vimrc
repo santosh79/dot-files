@@ -55,13 +55,13 @@ augroup END
 " http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
 filetype off
 
-let mapleader = ";"
+let mapleader = "\<Space>"
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>gp :!git push<CR>
 map <Leader>co :TComment<CR>
 map <Leader>gs :Gstatus<CR>
-map <Leader>gd :Gdiff<CR>
+map <Leader>gd :Gvdiff<CR>
 map <Leader>on :on<CR>
 map <Leader>gr :Gread<CR>
 map <Leader>gw :Gwrite<CR>
@@ -80,10 +80,12 @@ map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>w :w <CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>t :tabnew <C-R>=expand("%:p:h") . '/'<CR>
+nnoremap <Leader>o :CtrlP<CR>
 
 nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
+map ; :
 imap <C-l> <Space>=><Space>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
@@ -134,7 +136,7 @@ inoremap prf printf ("
 inoremap scf scanf ("
 inoremap tss toString()
 inoremap hq handleQuery(function(rows) {
-inoremap date<Tab> <C-R>=strftime("%y-%m-%d")<CR>
+inoremap date<Tab> <C-R>=strftime("%Y-%m-%d")<CR>
 
 set mouse=in
 
@@ -189,6 +191,6 @@ set secure
 colorscheme Tomorrow
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-colorscheme Tomorrow
+colorscheme leuven
 
 
