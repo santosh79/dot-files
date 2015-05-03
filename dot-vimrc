@@ -78,14 +78,16 @@ map <Leader>q <esc>:q<CR>
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>w :w <CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v V
+map <Leader>vn :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>t :tabnew <C-R>=expand("%:p:h") . '/'<CR>
 nnoremap <Leader>o :CtrlP<CR>
 
 nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
-map ; :
+map ; :!
 imap <C-l> <Space>=><Space>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
