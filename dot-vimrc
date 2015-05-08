@@ -11,6 +11,8 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'guns/vim-clojure-static'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'tpope/vim-fireplace'
 " Plugin 'tpope/vim-foreplay'
@@ -192,9 +194,8 @@ noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
 set exrc
 set secure
-colorscheme Tomorrow
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-colorscheme leuven
+colorscheme adam
 
 
