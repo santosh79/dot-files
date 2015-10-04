@@ -9,6 +9,7 @@
   branch = auto
 [alias]
   st = status
+  sts = status -s
   co = checkout
   br = branch
   f = fetch
