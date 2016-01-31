@@ -15,8 +15,10 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 Plugin 'kennethzfeng/vim-raml'
+Plugin 'tpope/vim-fireplace'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 " Plugin 'Valloric/YouCompleteMe'
-" Plugin 'tpope/vim-fireplace'
 " Plugin 'tpope/vim-foreplay'
 " Plugin 'tpope/vim-git'
 " Plugin 'derekwyatt/vim-scala'
@@ -79,11 +81,14 @@ map <Leader>ru :!elixir %<CR>
 map <Leader>di :!dialyzer %<CR>
 map <Leader>q <esc>:q<CR>
 map <Leader>a ea
+map <Leader>rt :Eval (clojure.test/run-tests)<CR>
+map <Leader>r :Require!<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>w :w <CR>
 map <Leader>v V
+map <Leader>n tn
 map <Leader>vn :vnew <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>t :tabnew <C-R>=expand("%:p:h") . '/'<CR>
@@ -135,16 +140,19 @@ noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log(
+" JS shortcuts
 inoremap frs function(err, res) {<CR>});<Esc>
 inoremap fdd function(done) {<CR>});<Esc>
 inoremap rtd return done();<Esc>
 inoremap ife if(err) return cb(err);
 inoremap ifn if(err) return next(err);
 inoremap ifd if(err) return done(err);
+inoremap prd path.resolve(__dirname,
+" elixir shortcuts
+inoremap rcd receive do<CR>end
 inoremap iof io:format("
 inoremap iop IO.puts "
 inoremap jss JSON.stringify(
-inoremap prd path.resolve(__dirname,
 inoremap prf printf ("
 inoremap scf scanf ("
 inoremap tss toString()
@@ -193,16 +201,19 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 
-let g:solarized_termcolors=256
-set t_Co=256
 
 
 noremap ! :Shell git grep -n <C-R>=expand('<cword>')<CR>
 
 set exrc
 set secure
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'deps\|node_modules\|DS_Store\|git'
+let g:gist_clip_command = 'xclip -selection clipboard'
 
+set t_Co=256
 colorscheme adam
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
