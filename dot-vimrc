@@ -13,6 +13,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'guns/vim-clojure-static'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/syntastic'
+Plugin 'kennethzfeng/vim-raml'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'tpope/vim-fireplace'
 " Plugin 'tpope/vim-foreplay'
@@ -76,6 +78,7 @@ map <Leader>ce :!erl -compile %<CR>
 map <Leader>ru :!elixir %<CR>
 map <Leader>di :!dialyzer %<CR>
 map <Leader>q <esc>:q<CR>
+map <Leader>a ea
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
@@ -92,12 +95,10 @@ nnoremap Q <nop>
 
 map <C-h> :nohl<CR>
 map ; :!
+imap <Leader>n <C-n>
 imap <C-l> <Space>=><Space>
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
-map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 
@@ -134,6 +135,12 @@ noremap tp gT
 noremap * /<C-R>=expand('<cword>')<CR>\><CR>
 inoremap kj <Esc>
 inoremap clg console.log(
+inoremap frs function(err, res) {<CR>});<Esc>
+inoremap fdd function(done) {<CR>});<Esc>
+inoremap rtd return done();<Esc>
+inoremap ife if(err) return cb(err);
+inoremap ifn if(err) return next(err);
+inoremap ifd if(err) return done(err);
 inoremap iof io:format("
 inoremap iop IO.puts "
 inoremap jss JSON.stringify(
