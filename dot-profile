@@ -30,7 +30,6 @@ alias m='mvim '
 alias hgl='hg log --only-branch'
 alias hgall='hg branches'
 alias hgb='hg branch'
-alias mt='make test'
 alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
@@ -71,5 +70,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/bin/terraform:/usr/local/bin:$PATH"
 
-alias mt='mix test'
+alias mt='mix test --exclude skip'
+alias mtc='mix test --only current'
+alias mts='mix test --only skip'
 alias im='iex -S mix'
