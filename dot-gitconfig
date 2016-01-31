@@ -25,3 +25,5 @@
   excludesfiles = ~/.gitignore
 [push]
 	default = simple
+[github]
+	user = santosh79
