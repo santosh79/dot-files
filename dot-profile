@@ -34,6 +34,7 @@ alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
 alias v='vim '
+alias cpn='cp -n '
 
 # export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 export CLICOLOR=1
@@ -74,3 +75,5 @@ alias mt='mix test --exclude skip'
 alias mtc='mix test --only current'
 alias mts='mix test --only skip'
 alias im='iex -S mix'
+
+export PATH=$HOME/bin:$PATH
