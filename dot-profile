@@ -1,45 +1,22 @@
 alias gst="git status"
-alias gc="git c"
-alias gca="git ca"
-alias gf="git fetch"
-alias gdc="git diff --cached"
-alias gd="git diff"
+alias gd="git diff --word-diff "
 alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
 alias sc="rails console"
 alias ss="rails server"
-alias lla="ls -lrt | tail -1"
-alias lh='ls -a | grep "^\." | more'
-alias vs='vagrant ssh'
-alias vp='vagrant up --provision'
-alias vh='vagrant halt'
-alias vu='vagrant up'
-alias hnpp="git push heroku-node using_node:master"
-alias gp='git push'
-alias gv='git commit -v'
-alias gpu='git pull'
-alias gh='git push heroku master'
-alias hnppl='heroku logs --app santosh-log-node'
+
 export PATH="/usr/local/bin:$PATH"
 alias lr='LEIN_ROOT=1 lein repl'
 alias lru='LEIN_ROOT=1 lein run'
 alias tl='tmux ls'
 alias ta='tmux at -t'
-alias m='mvim '
-alias hgl='hg log --only-branch'
-alias hgall='hg branches'
-alias hgb='hg branch'
+
 alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
 alias rr='bundle exec rake routes'
 alias v='vim '
-alias cpn='cp -n '
 
-# export PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
-export CLICOLOR=1
-export LS_COLORS exfxcxdxbxegebabagacad
-export TERM=xterm-256color
 source $HOME/dot-files/dot-git-completion.bash
 
 function parse_git_branch () {
@@ -56,20 +33,7 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
-alias inst='sudo apt-get -y install'
-alias gpom="git push origin master"
-
-alias tn='tmux new -s'
-alias tr='tmux-session restore'
-alias ts='tmux-session save'
-alias gpr='git pull --rebase'
-
-alias cpd="cp -R -n "
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/bin/terraform:/usr/local/bin:$PATH"
+alias tn='tmux new -s '
 
 alias mt='mix test --exclude skip'
 alias mtc='mix test --only current'
@@ -77,3 +41,49 @@ alias mts='mix test --only skip'
 alias im='iex -S mix'
 
 export PATH=$HOME/bin:$PATH
+
+alias lr='docker container run -it --rm clojure lein repl'
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH=$HOME/bin:$PATH
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+source "$HOME/.cargo/env"
+
+# DOCKER stuff
+# Container stuff
+alias dcls='docker container ls -a'
+alias dc='docker container '
+alias dcs='docker container start -i '
+alias dp='docker container run --publish '
+alias dcit='docker container run -it '
+alias dps='docker container ps -a '
+alias dcrn='docker container run --name '
+alias dcrm='docker container run rm '
+alias dsh='docker container exec -it '
+
+# Docker Image
+alias di='docker image '
+alias dimg='docker image ls '
+
+# Docker Network
+alias dn='docker network '
+alias dnls='docker network ls'
+alias dni='docker network inspect '
+
+# create a network
+alias dncr='docker network create --driver '
+
+# attach/detach a container to a network
+alias dncon='docker network connect '
+alias ddcon='docker network disconnect '
+alias dev='docker container run -it santoshdocker2021/dev bash'
+alias mirb='docker container run -it --rm santoshdocker2021/dev irb'
+alias miex='docker container run -it --rm santoshdocker2021/dev iex'
+alias mnode='docker container run -it --rm santoshdocker2021/dev node'
+
+
+# building docker from Dockerfile
+alias dbt='docker image build -t '
+# Example: `dbb <some_tag> .` -- builds into current dir
+# where Dockerfile is located
