@@ -1,48 +1,36 @@
 alias gst="git status"
-alias gd="git diff --word-diff "
+alias gdc="git diff --cached"
 alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
-alias sc="rails console"
-alias ss="rails server"
 
-export PATH="/usr/local/bin:$PATH"
-alias lr='LEIN_ROOT=1 lein repl'
-alias lru='LEIN_ROOT=1 lein run'
+alias lr='docker container run -it --rm clojure lein repl'
+
 alias tl='tmux ls'
 alias ta='tmux at -t'
 
-alias ss='bundle exec rails server'
-alias sc='bundle exec rails console'
-alias rr='bundle exec rake routes'
 alias v='vim '
 
-source $HOME/dot-files/dot-git-completion.bash
+export CLICOLOR=1
+export LS_COLORS exfxcxdxbxegebabagacad
+export TERM=xterm-256color
 
-function parse_git_branch () {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
- 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 NO_COLOR="\[\033[0m\]"
- 
-PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 
 export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
-alias tn='tmux new -s '
+alias tn='tmux new -s'
+alias tr='tmux-session restore'
+alias ts='tmux-session save'
 
 alias mt='mix test --exclude skip'
 alias mtc='mix test --only current'
 alias mts='mix test --only skip'
 alias im='iex -S mix'
 
-export PATH=$HOME/bin:$PATH
-
-alias lr='docker container run -it --rm clojure lein repl'
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
