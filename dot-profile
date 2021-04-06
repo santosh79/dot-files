@@ -4,7 +4,7 @@ alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
 
-alias lr='docker container run -it --rm clojure lein repl'
+alias lr='LEIN_ROOT=1 lein repl'
 
 alias tl='tmux ls'
 alias ta='tmux at -t'
@@ -27,12 +27,13 @@ alias tr='tmux-session restore'
 alias ts='tmux-session save'
 
 alias mt='mix test --exclude skip'
+# alias mt='dc exec -it remixdb:0.1 mix test --exclude skip'
 alias mtc='mix test --only current'
 alias mts='mix test --only skip'
 alias im='iex -S mix'
 
 
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH=$HOME/bin:$PATH
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
@@ -65,13 +66,15 @@ alias dncr='docker network create --driver '
 # attach/detach a container to a network
 alias dncon='docker network connect '
 alias ddcon='docker network disconnect '
-alias dev='docker container run -it santoshdocker2021/dev bash'
-alias mirb='docker container run -it --rm santoshdocker2021/dev irb'
-alias miex='docker container run -it --rm santoshdocker2021/dev iex'
-alias mnode='docker container run -it --rm santoshdocker2021/dev node'
+alias dev='docker container run -it --name dev --network dev_net -v $(pwd):/app santoshdocker2021/dev sh'
+alias mirb='docker container run -it --rm ruby:3.0-alpine irb'
+alias miex='docker container run -it --rm elixir:1.11.4-alpine iex'
+alias mnode='docker container run -it --rm node:15.13.0-alpine3.10 node'
 
 
 # building docker from Dockerfile
 alias dbt='docker image build -t '
-# Example: `dbb <some_tag> .` -- builds into current dir
+# Example: `dbt <some_tag> .` -- builds into current dir
 # where Dockerfile is located
+
+alias pg='ps aux | grep '
