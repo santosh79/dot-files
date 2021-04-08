@@ -1,5 +1,12 @@
 alias gst="git status"
+alias gad="git add "
 alias gdc="git diff --cached"
+alias gcp="git cherry-pick "
+alias gbr="git branch -a "
+alias glg="git lg "
+alias gd="git diff --word-diff "
+alias gcv="git commit -v"
+alias gam="git commit -am "
 alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
@@ -30,7 +37,7 @@ alias mt='mix test --exclude skip'
 # alias mt='dc exec -it remixdb:0.1 mix test --exclude skip'
 alias mtc='mix test --only current'
 alias mts='mix test --only skip'
-alias im='iex -S mix'
+alias im='iex -S mix run --no-start'
 
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
