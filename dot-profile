@@ -1,12 +1,15 @@
 alias gst="git status"
 alias gad="git add "
 alias gdc="git diff --cached"
+alias gc="git commit "
+alias gp="git push "
 alias gcp="git cherry-pick "
 alias gbr="git branch -a "
 alias glg="git lg "
 alias gd="git diff --word-diff "
+alias gwd="git diff --word-diff "
 alias gcv="git commit -v"
-alias gam="git commit -am "
+alias gco="git checkout "
 alias lp="ls -p"
 alias lrt="ls -lrt"
 alias la="ls -al"
@@ -77,6 +80,9 @@ alias dev='docker container run -it --name dev --network dev_net -v $(pwd):/app 
 alias mirb='docker container run -it --rm ruby:3.0-alpine irb'
 alias miex='docker container run -it --rm elixir:1.11.4-alpine iex'
 alias mnode='docker container run -it --rm node:15.13.0-alpine3.10 node'
+alias redis="docker container run -d -p 6379:6379 --rm --name redis redis:6.2.1-alpine"
+alias redis_stop="docker container stop redis"
+
 
 
 # building docker from Dockerfile
@@ -84,4 +90,4 @@ alias dbt='docker image build -t '
 # Example: `dbt <some_tag> .` -- builds into current dir
 # where Dockerfile is located
 
-alias pg='ps aux | grep '
+alias pg='ps aux | grep 'dc run -d -p 6379:6379 redis:6.2.1-alpine
