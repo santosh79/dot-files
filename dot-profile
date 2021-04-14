@@ -36,7 +36,8 @@ alias tn='tmux new -s'
 alias tr='tmux-session restore'
 alias ts='tmux-session save'
 
-alias mt='mix test --exclude skip'
+alias mt='mix test'
+alias mb='MIX_ENV=prod mix release'
 # alias mt='dc exec -it remixdb:0.1 mix test --exclude skip'
 alias mtc='mix test --only current'
 alias mts='mix test --only skip'
@@ -69,6 +70,10 @@ alias dimg='docker image ls '
 alias dn='docker network '
 alias dnls='docker network ls'
 alias dni='docker network inspect '
+
+# Docker Volume
+alias dv='docker volume '
+
 
 # create a network
 alias dncr='docker network create --driver '
