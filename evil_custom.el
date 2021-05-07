@@ -20,10 +20,17 @@
 (evil-define-key 'normal 'global (kbd "SPC l") 'evil-window-next)
 (evil-define-key 'normal 'global (kbd "SPC s") 'evil-window-split)
 (evil-define-key 'normal 'global (kbd "C-p") 'ido-find-file)
-(evil-define-key 'normal 'global (kbd "C-o") 'prevoius-buffer)
+(evil-define-key 'normal 'global (kbd "C-o") 'previous-buffer)
 (evil-define-key 'normal 'global (kbd "SPC SPC x") 'execute-extended-command)
 (evil-define-key 'normal 'global (kbd "C-k") 'kill-buffer)
 (evil-define-key 'normal 'global (kbd "SPC o n") (lambda () (evil-shell-command ":on")))
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (progn
+              (require 'evil)
+              (evil-define-key 'normal 'dired-mode-hook-mode-map (kbd "-") 'dired-up-directory)
+)))
 
 (add-hook 'clojure-mode-hook
           (lambda ()
@@ -74,7 +81,6 @@
           (lambda ()
             (progn
               (require 'evil)
-              (evil-define-key 'normal 'elixir-mode-map  (kbd "SPC c o") 'comment-line)
               (evil-define-key 'visual 'elixir-mode-map  (kbd "SPC c o") 'comment-or-uncomment-region)
 
               (evil-define-key 'normal 'elixir-mode-map  (kbd "SPC r u") '(lambda ()
@@ -85,14 +91,13 @@
           (lambda ()
             (progn
               (require 'evil)
-
               (evil-define-key 'normal 'ruby-mode-map  (kbd "SPC r u") '(lambda ()
                                                                           (interactive)
-                                                                          (shell-command (concat "ruby " (message (buffer-file-name)))))))))
+                                                                          (shell-command (concat "ruby \"" (message (buffer-file-name)) "\"")))))))
 
 
 
 (evil-define-key 'visual 'global (kbd "C-c") 'evil-normal-state)
 (evil-define-key 'visual 'global (kbd "1") 'evil-end-of-line)
 (evil-define-key 'normal 'global (kbd "SPC SPC v") 'evil-visual-line)
-(evil-define-key 'normal 'global (kbd "SPC ;") 'shell)
+(evil-define-key 'normal 'global (kbd "SPC ;") 'term)
