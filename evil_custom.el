@@ -1,3 +1,9 @@
+(defun toggle-comment-on-region ()
+  "comment or uncomment current line"
+  (interactive)
+  (comment-or-uncomment-region (region-beginning) (region-end)))
+(global-set-key (kbd "C-:") 'toggle-comment-on-region)
+
 (defun my-k ()
   "Read a char.  If `j' then invoke `evil-normal-state'.  Else insert it."
   (interactive)
@@ -76,6 +82,16 @@
               (evil-define-key 'normal 'org-mode-map  (kbd "SPC RET") 'org-toggle-checkbox)
 )))
 
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (progn
+              (require 'evil)
+
+              (evil-define-key 'normal 'ruby-mode-map  (kbd "SPC r u") '(lambda ()
+                                                                          (interactive)
+                                                                          (shell-command (concat "ruby " (message (buffer-file-name))))))
+)))
+
 
 (add-hook 'elixir-mode-hook
           (lambda ()
@@ -101,3 +117,13 @@
 (evil-define-key 'visual 'global (kbd "1") 'evil-end-of-line)
 (evil-define-key 'normal 'global (kbd "SPC SPC v") 'evil-visual-line)
 (evil-define-key 'normal 'global (kbd "SPC ;") 'term)
+(add-hook 'elixir-mode-hook #'aggressive-indent-mode)
+(add-hook 'rust-mode-hook #'aggressive-indent-mode)
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+
+(add-hook 'rust-mode-hook
+          (lambda ()
+            (progn
+              (require 'evil)
+              (evil-define-key 'normal 'rust-mode-map  (kbd "SPC r r") 'rust-run))))

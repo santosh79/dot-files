@@ -30,8 +30,6 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 NO_COLOR="\[\033[0m\]"
 
-export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
-
 alias tn='tmux new -s'
 alias tr='tmux-session restore'
 alias ts='tmux-session save'
@@ -47,8 +45,6 @@ alias im='iex -S mix run --no-start'
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH=$HOME/bin:$PATH
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-source "$HOME/.cargo/env"
 
 # DOCKER stuff
 # Container stuff
@@ -87,7 +83,7 @@ alias db='dc run -e POSTGRES_PASSWORD=postgres --net dapper_net --name db -d pos
 alias dpsql='dc exec -it db psql -U postgres'
 alias dlr='docker container run -it -v $(pwd):/app --rm clojure:latest lein repl'
 alias dirb='docker container run -it -v $(pwd):/app --rm ruby:3.0-alpine irb'
-alias diex='docker container run -it -v $(pwd):/app --rm elixir:1.11.4-alpine iex'
+alias diex='docker container run -it -v $(pwd):/app --rm elixir:1.12-alpine iex'
 alias dnode='docker container run -it --rm node:15.13.0-alpine3.10 node'
 alias redis="docker container run -d -p 6379:6379 --rm --name redis redis:6.2.1-alpine"
 alias redis_stop="docker container stop redis"
@@ -99,4 +95,4 @@ alias dbt='docker image build -t '
 # Example: `dbt <some_tag> .` -- builds into current dir
 # where Dockerfile is located
 
-alias pg='ps aux | grep 'dc run -d -p 6379:6379 redis:6.2.1-alpine
+alias pg='ps aux | grep '
