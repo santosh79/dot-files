@@ -2,14 +2,13 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (region-beginning) (region-end)))
-(global-set-key (kbd "C-:") 'toggle-comment-on-region)
 
 (defun my-k ()
   "Read a char.  If `j' then invoke `evil-normal-state'.  Else insert it."
   (interactive)
   (let ((ch  (read-char-exclusive)))
     (if (eq ?j ch)
-      (evil-normal-state)
+        (evil-normal-state)
       (insert "k" (string ch)))))
 
 (global-set-key "k" 'my-k)
@@ -22,20 +21,20 @@
 (evil-define-key 'normal 'global (kbd "SPC q") 'evil-quit)
 (evil-define-key 'normal 'global (kbd "SPC v n") 'evil-window-vsplit)
 (evil-define-key 'normal 'global (kbd "SPC w w") 'save-buffer)
-(evil-define-key 'normal 'global (kbd "SPC i b") 'ibuffer)
+(evil-define-key 'normal 'global (kbd "SPC SPC b") 'ibuffer)
 (evil-define-key 'normal 'global (kbd "SPC l") 'evil-window-next)
 (evil-define-key 'normal 'global (kbd "SPC s") 'evil-window-split)
 (evil-define-key 'normal 'global (kbd "C-p") 'ido-find-file)
-(evil-define-key 'normal 'global (kbd "C-o") 'previous-buffer)
 (evil-define-key 'normal 'global (kbd "SPC SPC x") 'execute-extended-command)
 (evil-define-key 'normal 'global (kbd "C-k") 'kill-buffer)
 (evil-define-key 'normal 'global (kbd "SPC o n") (lambda () (evil-shell-command ":on")))
 
+(evil-define-key 'visual 'global  (kbd "C-/") 'comment-or-uncomment-region)
+
 (add-hook 'dired-mode-hook
           (lambda ()
             (progn
-              (require 'evil)
-              (evil-define-key 'normal 'dired-mode-hook-mode-map (kbd "-") 'dired-up-directory)
+              (lambda () (define-key dired-mode-map (kbd "-") 'dired-up-directory))
 )))
 
 (add-hook 'clojure-mode-hook
@@ -90,18 +89,16 @@
               (evil-define-key 'normal 'ruby-mode-map  (kbd "SPC r u") '(lambda ()
                                                                           (interactive)
                                                                           (shell-command (concat "ruby " (message (buffer-file-name))))))
-)))
+              )))
 
 
 (add-hook 'elixir-mode-hook
           (lambda ()
             (progn
               (require 'evil)
-              (evil-define-key 'visual 'elixir-mode-map  (kbd "SPC c o") 'comment-or-uncomment-region)
-
               (evil-define-key 'normal 'elixir-mode-map  (kbd "SPC r u") '(lambda ()
-                                                                          (interactive)
-                                                                          (shell-command (concat "elixir " (message (buffer-file-name)))))))))
+                                                                            (interactive)
+                                                                            (shell-command (concat "elixir " (message (buffer-file-name)))))))))
 
 (add-hook 'ruby-mode-hook
           (lambda ()
@@ -127,3 +124,4 @@
             (progn
               (require 'evil)
               (evil-define-key 'normal 'rust-mode-map  (kbd "SPC r r") 'rust-run))))
+
