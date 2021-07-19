@@ -17,6 +17,7 @@
 
 (evil-define-key 'normal 'global (kbd "1") 'evil-end-of-line)
 (evil-define-key 'normal 'global (kbd "SPC b") 'switch-to-buffer)
+(evil-define-key 'normal 'global (kbd "SPC p") 'projectile--find-file)
 
 (evil-define-key 'normal 'global (kbd "SPC q") 'evil-quit)
 (evil-define-key 'normal 'global (kbd "SPC v n") 'evil-window-vsplit)
